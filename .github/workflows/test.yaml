@@ -1,0 +1,62 @@
+name: Test
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MICROHOST_ENV: dev
+      MICROHOST_QA: true
+      CICD: true
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node-version: [14.x, 16.x]
+
+    steps:
+      - name: Checkout Filesystem
+        uses: actions/checkout@v2
+        with:
+          # There needs to be a PAT that matches the exact same token within
+          # the repository's action token.  Super odd!
+          token: ${{ secrets.SAASWORKS_TESTING_V2 }}
+          repository: saasworks/microhost-filesystem-internal
+          path: filesystem
+          ref: main
+
+      - name: Checkout QA Tools
+        uses: actions/checkout@v2
+        with:
+          # There needs to be a PAT that matches the exact same token within
+          # the repository's action token.  Super odd!
+          token: ${{ secrets.SAASWORKS_TESTING_V2 }}
+          repository: saasworks/microhost-quality-internal
+          path: quality
+          ref: main
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          path: repository
+
+      - name: Run Manual Test
+        run: |
+          cd filesystem &&
+          CICD=true npm i &&
+          sudo FILESYSTEM_INSTALL=true CICD=true node scripts/install-binaries.js &&
+          MICROHOST_INSTALL=true CICD=true micro install &&
+          cd ../quality &&
+          CICD=true npm i &&
+          MICROHOST_INSTALL=true CICD=true micro install &&
+          cd ../repository &&
+          CICD=true npm i &&
+          CICD=true micro install &&
+          sudo npm i jasmine -g &&
+          CICD=true micro qa
