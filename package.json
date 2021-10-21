@@ -1,4 +1,13 @@
 {
   "name": "hustler-website",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "lastModified": 1634840198522,
+  "microhost": {
+    "server": {
+      "daemonized": true
+    }
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
