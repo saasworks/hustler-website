@@ -1,0 +1,37 @@
+{
+    "title": "Hustler Website",
+    "name": "hustler-website",
+    "siteHeader": {
+        "logo": {
+            "extension": "html"
+        }
+    },
+    "nav": {
+        "links": [
+            {
+                "name": "About",
+                "href": "about",
+                "subnav": "about-subnav"
+            },
+            {
+                "name": "Solutions",
+                "href": "solutions",
+                "subnav": "solutions-subnav",
+                "subnav-type": "full-width"
+            },
+            {
+                "name": "Products",
+                "href": "products",
+                "subnav": "products-subnav"
+            },
+            {
+                "name": "Pricing",
+                "href": "pricing"
+            },
+            {
+                "name": "Getting Started",
+                "href": "getting-started"
+            }
+        ]
+    }
+}
