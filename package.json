@@ -1,20 +1,19 @@
 {
-  "name": "hustler-website",
-  "version": "1.0.0",
-  "lastModified": 1634840198522,
-  "microhost": {
-    "server": {
-      "daemonized": true
+    "name": "hustler-website",
+    "version": "1.0.0",
+    "lastModified": 1634840198522,
+    "microhost": {
+        "server": {
+            "daemonized": true
+        }
+    },
+    "dependencies": {
+        "bootstrap-icons": "^1.6.1",
+        "express": "^4.17.1",
+        "wildstring": "^1.0.9"
+    },
+    "scripts": {
+        "go": "npm run ngrok ",
+        "ngrok": "ngrok http --region=us --hostname=ngrok.saasworks.io 80"
     }
-  },
-  "dependencies": {
-    "bootstrap-icons": "^1.6.1",
-    "express": "^4.17.1",
-    "wildstring": "^1.0.9"
-  },
-  "scripts": {
-    "go": "npm run start-express && npm run ngrok ",
-    "start-express": "node scripts/start-express.js",
-    "ngrok": "ngrok http --region=us --hostname=ngrok.saasworks.io 80"
-  }
 }
