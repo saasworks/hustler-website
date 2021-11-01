@@ -13,6 +13,7 @@
     "wildstring": "^1.0.9"
   },
   "scripts": {
+    "go": "npm run start-express && npm run ngrok ",
     "start-express": "node scripts/start-express.js",
     "ngrok": "ngrok http --region=us --hostname=ngrok.saasworks.io 80"
   }
