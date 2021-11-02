@@ -45,6 +45,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: repository
+          token: ${{ secrets.SAASWORKS_TESTING_V2 }}
 
       - name: Run Manual Test
         run: |
