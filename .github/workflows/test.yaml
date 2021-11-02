@@ -50,7 +50,7 @@ jobs:
         run: |
           cd filesystem &&
           CICD=true npm i &&
-          sudo FILESYSTEM_INSTALL=true CICD=true node scripts/install-binaries.js &&
+          sudo FILESYSTEM_INSTALL=true CICD=true node scripts/install-globally.js &&
           MICROHOST_INSTALL=true CICD=true micro install &&
           cd ../quality &&
           CICD=true npm i &&
