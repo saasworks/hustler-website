@@ -22,6 +22,7 @@
     <link rel="icon" href="/icon.png">
     <link rel="icon" href="/assets/peace.jpg">
     <link rel="icon" href="/assets/consult.jpg">
+    <link href="compiled.css" rel="stylesheet" />
 
 
     <style>
@@ -115,10 +116,7 @@
 </head>
 
 <body>
-
-
     <div class="app">
-
         <router-view></router-view>
 
         <header>
@@ -127,62 +125,64 @@
         <main>
 
             <!-- HERO -->
-            <section class="section section-top section-full">
-
-
-                <!-- Overlay -->
-                <div class="bg-overlay"></div>
-
-                <!-- HERO -->
 
 
 
+            <!-- Overlay -->
+            <div class="bg-overlay"></div>
+
+            <!-- HERO -->
 
 
+
+
+
+            <div class="row">
+                <!-- Purchases -->
+                <div class="pricing-header pt-4 mx-auto">
+                    <h1 class="display-4 fw-normal">Offerings</h1>
+                </div>
+            </div>
+            <div class="row">
+                <purchases></purchases>
+            </div>
+
+
+            <div class="row">
+                <!-- About me -->
+                <div class="pricing-header pt-4 mx-auto">
+                    <h1 class="display-4 fw-normal">About Me</h1>
+                </div>
+
+
+                <aboutme></aboutme>
+            </div>
+            <div class="container">
                 <div class="row">
-                    <!-- Purchases -->
-                    <div class="pricing-header pt-4 mx-auto">
-                        <h1 class="display-4 fw-normal">Offerings</h1>
-                    </div>
+                    <h2>Schedule</h2>
                 </div>
                 <div class="row">
-                    <purchases></purchases>
+                    <signup></signup>
                 </div>
 
+            </div>
 
-                <div class="row">
-                    <!-- About me -->
-                    <div class="pricing-header pt-4 mx-auto">
-                        <h1 class="display-4 fw-normal">About Me</h1>
-                    </div>
-
-
-                    <aboutme></aboutme>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <h2>Schedule</h2>
-                    </div>
-                    <div class="row">
-                        <signup></signup>
-                    </div>
-
-                </div>
-
-
+            <footer></footer>
 
         </main>
-        <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-            </p>
-        </footer>
+    </div>
 
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+
+
+    <script src="compiled.js"></script>
+    <script>
+        (() => {
+            const app = new VueApp({
+                site: ['hustler-website', 'vue']
+            });
+        })();
+    </script>
 </body>
 
 </html>
