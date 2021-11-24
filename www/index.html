@@ -129,18 +129,31 @@
 
             <div class="container">
                 <div class="row">
-                    <icon-hero></icon-hero>
+                    <icon-hero icon-src="icon-test.png" title="Kait Wholeson Business Coach Zzzzzz"></icon-hero>
                 </div>
 
-                <div class="row">
-                    <!-- Purchases -->
-                    <div class="pricing-header pt-4 mx-auto">
-                        <h1 class="display-4 fw-normal">Offerings</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <purchases></purchases>
-                </div>
+
+
+                <services rows="1" services-list="[ 
+                    {title:'', description:'', img-src:'', bulletPoints:'', link:''}
+                    ]"></services>
+
+
+                <purchases purchase-list="
+                    [
+                        {
+                            size:'small', items:[
+                                { title:'', img-src:'', price:'', pricePer:'', description:'', bulletPoints:'', buttonText:'', buttonLink:'' },
+                                { title:'', img-src:'', price:'', pricePer:'', description:'', bulletPoints:'', buttonText:'', buttonLink:'' },
+                                { title:'', img-src:'', price:'', pricePer:'', description:'', bulletPoints:'', buttonText:'', buttonLink:'' }
+                            ]
+                        },
+                        {
+                            size:'large', items:[
+                                { title:'', img-src:'', price:'', pricePer:'', description:'', bulletPoints:'', buttonText:'', buttonLink:'' }]
+                        }
+                    ]"></purchases>
+
 
 
                 <div class="row">
@@ -149,17 +162,25 @@
                         <h1 class="display-4 fw-normal">About Me</h1>
                     </div>
 
-                    <aboutme></aboutme>
+                    <aboutme img-src="assets/BusinessCoaching.jpg" description="Conscious Business Coach and Consultant"
+                        bulleted-list="['Serial entrepreneur','Writer, Multimedia Artist, a Romantic Philosopher','Subconscious Madwoman, Life Scientist, Earth Guardian', 'Multidimensional Priestess.', 'Specializing in Human Relations, Connection, Belonging, Self
+                    Expression,
+                    Global Engagement &
+                    Activism', '200HR Certified Meditation Teacher by The Dharana Method<br> Not
+                    a
+                    therapist. Not a doctor. Not a practitioner.','Working with Me', Bringing 7 years business, mindset, and esoteric experience, 'Invested in over $15,000 in programs and mentors of my own','5+ formal certificates to support my custom-weaved framework:
+                    Graphic
+                    communication','Certification, meditation teaching, mastery for coaches, Rhythm,
+                    Body
+                    Soul Master Course,','Creatrix Activation.' ]"></aboutme>
                 </div>
                 <div class="row">
-                    <three-photo></three-photo>
+                    <three-img img-1="" img-2="" img-3=""></three-img>
                 </div>
-                <div class="row">
-                    <footer></footer>
-                </div>
+
             </div>
 
-
+            <template-footer></template-footer>
         </main>
 
     </div>
